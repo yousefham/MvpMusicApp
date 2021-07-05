@@ -1,4 +1,4 @@
-package com.yosoftware.musicapp.features.home;
+package com.yosoftware.musicapp.features.home.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 

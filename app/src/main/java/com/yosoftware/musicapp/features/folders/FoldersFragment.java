@@ -12,10 +12,10 @@ import com.yosoftware.musicapp.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Folders#newInstance} factory method to
+ * Use the {@link FoldersFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Folders extends Fragment {
+public class FoldersFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class Folders extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Folders() {
+    public FoldersFragment() {
         // Required empty public constructor
     }
 
@@ -39,8 +39,8 @@ public class Folders extends Fragment {
      * @return A new instance of fragment Folders.
      */
     // TODO: Rename and change types and number of parameters
-    public static Folders newInstance(String param1, String param2) {
-        Folders fragment = new Folders();
+    public static FoldersFragment newInstance(String param1, String param2) {
+        FoldersFragment fragment = new FoldersFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
