@@ -7,7 +7,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.yosoftware.musicapp.features.all_music.view.AllMusicFragment;
 import com.yosoftware.musicapp.features.folders.views.FoldersFragment;
+import com.yosoftware.musicapp.features.playlists.view.PlayListFragment;
 
 public class TabAdapter extends FragmentPagerAdapter {
     Context context;
@@ -26,10 +28,10 @@ public class TabAdapter extends FragmentPagerAdapter {
         switch (position) {
             case 0:
                 return new FoldersFragment();
-//            case 1:
-//                return new AllSongsFragment();
-//            case 2:
-//                return new PlaylistsFragment();
+            case 1:
+                return new AllMusicFragment();
+            case 2:
+                return new PlayListFragment();
             default:
                 return null;
 

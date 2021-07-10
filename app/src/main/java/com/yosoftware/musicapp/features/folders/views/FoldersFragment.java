@@ -31,9 +31,9 @@ import java.util.ArrayList;
 public class FoldersFragment extends Fragment implements FoldersFragmentView {
     FoldersPresenter presenter;
     FoldersAdapter adapter;
-    ArrayList<Folder> folders;
+    ArrayList<Folder> folder_list;
 
-    FragmentFoldersBinding binding;
+   FragmentFoldersBinding binding;
 
     public FoldersFragment() {
         // Required empty public constructor
@@ -63,16 +63,16 @@ public class FoldersFragment extends Fragment implements FoldersFragmentView {
     }
 
     void init() {
-        folders = new ArrayList<>();
-        adapter = new FoldersAdapter(getContext(), folders);
+        folder_list = new ArrayList<>();
+        adapter = new FoldersAdapter(getContext(), folder_list);
         binding.recyclerView.setAdapter(adapter);
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
     }
 
     @Override
     public void onFoldersListUpdate(ArrayList<Folder> folders) {
-        folders.clear();
-        folders.addAll(folders);
+        folder_list.clear();
+        folder_list.addAll(folders);
         Log.d("sizeFolder", folders.size() + "");
         adapter.notifyDataSetChanged();
     }

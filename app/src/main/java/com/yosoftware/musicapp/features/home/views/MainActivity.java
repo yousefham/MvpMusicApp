@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("Folders"));
 //        tabLayout.setSelectedTabIndicatorColor(Color.parseColor("#747474"));
         tabLayout.setTabTextColors(Color.parseColor("#aaaaaa"), Color.parseColor("#747474"));
-//        tabLayout.addTab(tabLayout.newTab().setText("All Music"));
-//        tabLayout.addTab(tabLayout.newTab().setText("Play Lists"));
+        tabLayout.addTab(tabLayout.newTab().setText("All Music"));
+        tabLayout.addTab(tabLayout.newTab().setText("Play Lists"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
 
