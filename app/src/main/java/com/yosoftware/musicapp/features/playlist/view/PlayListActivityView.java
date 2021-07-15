@@ -10,4 +10,8 @@ public interface PlayListActivityView {
     void onPlayListDeleteSuccess();
 
     void onPlayListDeleteError();
+
+    void onPlayListNameEditedSuccessfully(String newName);
+
+    void onPlayListNameEditedGetError();
 }

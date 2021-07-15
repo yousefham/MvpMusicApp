@@ -17,11 +17,13 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.yosoftware.musicapp.R;
+import com.yosoftware.musicapp.core.datasources.DataBaseHelper;
 import com.yosoftware.musicapp.features.all_music.data.model.Music;
+import com.yosoftware.musicapp.features.player.view.Player;
 
 import java.util.ArrayList;
 
-public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.ViewHolder>{
+public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.ViewHolder> {
     Context context;
     ArrayList<Music> musicList;
     String type;
@@ -32,6 +34,7 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.ViewHolder>{
         this.context = context;
         this.musicList = musicList;
     }
+
     public MusicAdapter(Context context, ArrayList<Music> musicList, String type, int playListId) {
         this.context = context;
         this.musicList = musicList;
@@ -88,14 +91,10 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.ViewHolder>{
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.music_item:
-//                    Music music = musicList.get(getAdapterPosition());
-////                    Intent intent = new Intent(context, Player.class);
-////                    intent.putExtra("title", music.getTitle());
-////                    intent.putExtra("artist", music.getArtist());
-////                    intent.putExtra("duration", music.getDuration());
-////                    intent.putExtra("url", music.getData());
-////                    intent.putExtra("musicData", gson.toJson(music));
-//                    context.startActivity(intent);
+                    Music music = musicList.get(getAdapterPosition());
+                    Intent intent = new Intent(context, Player.class);
+                    intent.putExtra("music", new Gson().toJson(music));
+                    context.startActivity(intent);
                     break;
                 case R.id.dots:
                     showSheetDialog();
@@ -116,7 +115,7 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.ViewHolder>{
             music.setTitle(musicList.get(getAdapterPosition()).getTitle());
             music.setArtist(musicList.get(getAdapterPosition()).getArtist());
             music.setDuration(musicList.get(getAdapterPosition()).getDuration());
-           // DataBaseHelper.with(context).addMusic(music, context);
+            DataBaseHelper.with(context).addMusic(music, context);
         }
 
         private void showSheetDialog() {

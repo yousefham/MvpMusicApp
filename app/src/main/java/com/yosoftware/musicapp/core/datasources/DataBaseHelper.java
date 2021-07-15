@@ -56,12 +56,17 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         database.close();
     }
 
-    public void EditPlayListInfo(PlayList playList) {
+    public boolean EditPlayListInfo(PlayList playList) {
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("PLAYLISTNAME", playList.getPlayListName());
-        database.update(PLAYLISTS, values, "ID=" + playList.getId(), null);
+        int status = database.update(PLAYLISTS, values, "ID=" + playList.getId(), null);
         database.close();
+        if (status == 1) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public boolean DeletePlayList(int Id, Context context) {

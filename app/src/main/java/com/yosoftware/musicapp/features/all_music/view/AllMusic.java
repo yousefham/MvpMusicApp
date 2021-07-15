@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.yosoftware.musicapp.R;
 import com.yosoftware.musicapp.adapters.MusicAdapter;
 import com.yosoftware.musicapp.databinding.FragmentAllMusicBinding;
 import com.yosoftware.musicapp.features.all_music.data.model.Music;
@@ -19,19 +18,19 @@ import java.util.Collections;
 import java.util.Comparator;
 
 
-public class AllMusicFragment extends Fragment implements AllMusicFragmentView {
+public class AllMusic extends Fragment implements AllMusicView {
     AllMusicPresenter presenter;
     FragmentAllMusicBinding binding;
     ArrayList<Music> music_list;
     MusicAdapter adapter;
 
-    public AllMusicFragment() {
+    public AllMusic() {
         // Required empty public constructor
     }
 
 
-    public static AllMusicFragment newInstance() {
-        AllMusicFragment fragment = new AllMusicFragment();
+    public static AllMusic newInstance() {
+        AllMusic fragment = new AllMusic();
         return fragment;
     }
 

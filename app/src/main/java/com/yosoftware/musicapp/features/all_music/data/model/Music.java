@@ -116,4 +116,16 @@ public class Music {
     public void setPlay_list_id(int play_list_id) {
         this.play_list_id = play_list_id;
     }
+
+    @Override
+    public String toString() {
+        return "Music{" +
+                "id='" + id + '\'' +
+                ", title='" + title + '\'' +
+                ", artist='" + artist + '\'' +
+                ", data='" + data + '\'' +
+                ", displayName='" + displayName + '\'' +
+                ", duration='" + duration + '\'' +
+                '}';
+    }
 }

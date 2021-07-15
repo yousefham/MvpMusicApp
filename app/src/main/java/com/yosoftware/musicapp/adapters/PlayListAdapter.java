@@ -63,15 +63,12 @@ public class PlayListAdapter extends RecyclerView.Adapter<PlayListAdapter.ViewHo
 
     class ViewHolder extends RecyclerView.ViewHolder {
         TextView playList_name, songCount;
-        ImageView delete;
         ConstraintLayout layout;
-
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             playList_name = (TextView) itemView.findViewById(R.id.playList_name);
             songCount = (TextView) itemView.findViewById(R.id.song_count);
-            delete = (ImageView) itemView.findViewById(R.id.delete);
             layout = (ConstraintLayout) itemView.findViewById(R.id.playlistItem);
 
 

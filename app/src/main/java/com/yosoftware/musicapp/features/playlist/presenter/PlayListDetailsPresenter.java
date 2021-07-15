@@ -4,6 +4,7 @@ import android.app.Activity;
 
 import com.yosoftware.musicapp.core.datasources.DataBaseHelper;
 import com.yosoftware.musicapp.features.playlist.view.PlayListActivityView;
+import com.yosoftware.musicapp.features.playlists.data.model.PlayList;
 
 public class PlayListDetailsPresenter {
     Activity activity;
@@ -26,6 +27,18 @@ public class PlayListDetailsPresenter {
             view.onPlayListDeleteSuccess();
         } else {
             view.onPlayListDeleteError();
+        }
+    }
+
+    public void editPlayListName(String name) {
+        PlayList playList = new PlayList();
+        playList.setId(playListId);
+        playList.setPlayListName(name);
+        boolean edited = DataBaseHelper.with(activity).EditPlayListInfo(playList);
+        if (edited) {
+            view.onPlayListNameEditedSuccessfully(name);
+        } else {
+            view.onPlayListNameEditedGetError();
         }
     }
 }
